@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Debashis Puhan — Tribologist & Surface Scientist</title>
+  <meta name="description" content="Research Associate at the University of Sheffield specialising in tribology, lubrication science, and surface engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Token System ──────────────────────────────────────────── */
+    :root {
+      --ink:        #0f1117;
+      --ink-mid:    #3a3f52;
+      --ink-soft:   #6b7185;
+      --rule:       #d4d8e8;
+      --surface:    #f6f7fb;
+      --white:      #ffffff;
+      --accent:     #1a3cff;   /* electric cobalt */
+      --accent-alt: #00c2a8;   /* teal highlight */
+      --glow:       rgba(26, 60, 255, 0.08);
+
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body:    'Space Grotesk', sans-serif;
+      --font-mono:    'IBM Plex Mono', monospace;
+      --font-italic:  'Playfair Display', serif;
+
+      --max-w: 1080px;
+      --gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      min-height: calc(100vh - 56px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--gap) clamp(1.5rem, 5vw, 3rem);
+      gap: 3rem;
+    }
+
+    .hero-text {}
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-italic {
+      font-family: var(--font-italic);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      color: var(--ink-mid);
+      margin-bottom: 1.8rem;
+      display: block;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      max-width: 44ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 0.3rem 0.7rem;
+      color: var(--ink-mid);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #0f2be0;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ─── Signature element: friction surface visualisation ──────── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .surface-viz {
+      width: 100%;
+      max-width: 460px;
+    }
+
+    /* ─── Stats bar ──────────────────────────────────────────────── */
+    .stats-bar {
+      background: var(--ink);
+      color: var(--white);
+      padding: 2rem clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .stats-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .stat {
+      border-left: 1px solid rgba(255,255,255,0.15);
+      padding-left: 1.5rem;
+    }
+
+    .stat-num {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      display: block;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-num span {
+      color: var(--accent-alt);
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Sections ───────────────────────────────────────────────── */
+    section {
+      padding: var(--gap) clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    /* ─── Research / Experience ──────────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .timeline-meta {
+      text-align: right;
+      padding-right: 2rem;
+      border-right: 2px solid var(--rule);
+      padding-top: 0.2rem;
+    }
+
+    .timeline-meta.current { border-right-color: var(--accent); }
+
+    .timeline-period {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      display: block;
+    }
+
+    .timeline-inst {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .timeline-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-body {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .timeline-body ul {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .timeline-body ul li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-body ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    /* ─── Research Areas ─────────────────────────────────────────── */
+    .research-areas { background: var(--surface); }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .area-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
+      padding: 1.8rem;
+      border-radius: 2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .area-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    .area-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .area-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .area-desc {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    /* ─── Publications ───────────────────────────────────────────── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 1rem;
+      padding: 1.2rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .pub-item:hover {
+      border-color: var(--accent);
+      background: var(--glow);
+    }
+
+    .pub-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      padding-top: 0.15rem;
+      text-align: right;
+    }
+
+    .pub-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+    }
+
+    .pub-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
+    }
+
+    .pub-journal {
+      color: var(--accent-alt);
+    }
+
+    .pub-toggle {
+      background: transparent;
+      border: none;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .pub-hidden { display: none; }
+    .pub-hidden.shown { display: block; }
+
+    /* ─── Funding / Awards ───────────────────────────────────────── */
+    .awards-bg { background: var(--ink); color: var(--white); }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .award-card {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .award-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .award-detail {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.03em;
+    }
+
+    .award-amount {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-alt);
+      margin-top: 0.5rem;
+      display: block;
+      letter-spacing: -0.01em;
+    }
+
+    .awards-bg h2 { color: var(--white); }
+    .awards-bg .section-num { color: var(--accent-alt); }
+    .awards-bg .section-header { border-color: rgba(255,255,255,0.15); }
+
+    /* ─── Education ──────────────────────────────────────────────── */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      padding-top: 0.2rem;
+    }
+
+    .edu-degree {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      margin-top: 0.2rem;
+    }
+
+    .edu-gpa {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-alt);
+      margin-top: 0.3rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Contact ────────────────────────────────────────────────── */
+    .contact-bg { background: var(--surface); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      font-size: 1.1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-text {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+    }
+
+    .contact-text strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: block;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-text a { color: var(--accent); text-decoration: none; }
+    .contact-text a:hover { text-decoration: underline; }
+
+    .contact-blurb {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .contact-blurb p + p { margin-top: 1rem; }
+
+    /* ─── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.35);
+      padding: 2rem clamp(1.5rem, 5vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer span {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; }
+      .hero-visual { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-meta { text-align: left; border-right: none; border-left: 2px solid var(--rule); padding-left: 1rem; padding-right: 0; }
+      .timeline-meta.current { border-left-color: var(--accent); }
+      .areas-grid { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .nav-links { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────────────── -->
+  <nav>
+    <a href="#" class="nav-logo">D. Puhan / PhD</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────── -->
+  <div class="hero" style="max-width:var(--max-w);margin:0 auto;padding:var(--gap) clamp(1.5rem,5vw,3rem);">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Research Associate · University of Sheffield</p>
+      <!-- ─── Profile photo ─────────────────────────────────────────
+           Upload your photo to the repo with the filename photo.jpg
+           (or photo.png) and it will appear here automatically.
+           To change size, edit width/height below. ──────────────── -->
+      <img
+        src="photo.jpg"
+        alt="Dr. Debashis Puhan"
+        onerror="this.style.display='none'"
+        style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin-bottom:1.4rem;border:3px solid var(--rule);display:block;"
+      />
+      <h1>Debashis<br>Puhan</h1>
+      <span class="hero-italic">Where surfaces meet and science begins</span>
+      <p class="hero-desc">
+        Tribologist and surface scientist investigating how materials behave at their boundaries — from electric vehicle drivetrains to the lubrication of food and biological surfaces.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Tribology</span>
+        <span class="tag">Lubrication Science</span>
+        <span class="tag">Polymer Composites</span>
+        <span class="tag">Surface Engineering</span>
+        <span class="tag">Bio-Tribology</span>
+        <span class="tag">EV Drivetrains</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="mailto:d.puhan@sheffield.ac.uk" class="btn btn-ghost">Get in Touch</a>
+        <!-- ─── CV download ─────────────────────────────────────────
+             Upload your CV PDF to the repo named CV_Debashis_Puhan.pdf
+             and this button will link to it automatically. ───────── -->
+        <a href="CV_Debashis_Puhan.pdf" download class="btn btn-ghost">↓ Download CV</a>
+      </div>
+    </div>
+
+    <!-- Signature element: stylised surface topography SVG -->
+    <div class="hero-visual">
+      <svg class="surface-viz" viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a3cff" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#1a3cff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00c2a8" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#00c2a8" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="blur1">
+            <feGaussianBlur stdDeviation="3"/>
+          </filter>
+        </defs>
+
+        <!-- Grid lines -->
+        <g stroke="#d4d8e8" stroke-width="0.5" opacity="0.5">
+          <line x1="0" y1="80" x2="460" y2="80"/>
+          <line x1="0" y1="160" x2="460" y2="160"/>
+          <line x1="0" y1="240" x2="460" y2="240"/>
+          <line x1="0" y1="320" x2="460" y2="320"/>
+          <line x1="80" y1="0" x2="80" y2="380"/>
+          <line x1="160" y1="0" x2="160" y2="380"/>
+          <line x1="240" y1="0" x2="240" y2="380"/>
+          <line x1="340" y1="0" x2="340" y2="380"/>
+          <line x1="420" y1="0" x2="420" y2="380"/>
+        </g>
+
+        <!-- Surface profile — lower (rough surface) -->
+        <path d="M0 310 C20 308 35 315 55 305 C75 295 90 312 110 308 C130 304 145 316 165 310 C185 304 200 318 220 312 C240 306 255 314 275 308 C295 302 310 316 330 310 C350 304 365 318 385 312 C405 306 430 310 460 308 L460 380 L0 380 Z" fill="url(#g2)" />
+        <path d="M0 310 C20 308 35 315 55 305 C75 295 90 312 110 308 C130 304 145 316 165 310 C185 304 200 318 220 312 C240 306 255 314 275 308 C295 302 310 316 330 310 C350 304 365 318 385 312 C405 306 430 310 460 308" stroke="#00c2a8" stroke-width="2" fill="none"/>
+
+        <!-- Surface profile — upper (sliding surface) -->
+        <path d="M0 180 C25 175 40 185 65 172 C90 159 105 178 130 170 C155 162 170 180 195 173 C220 166 235 178 260 171 C285 164 300 176 325 168 C350 160 375 172 400 166 C420 161 440 170 460 165 L460 240 L0 240 Z" fill="url(#g1)" />
+        <path d="M0 180 C25 175 40 185 65 172 C90 159 105 178 130 170 C155 162 170 180 195 173 C220 166 235 178 260 171 C285 164 300 176 325 168 C350 160 375 172 400 166 C420 161 440 170 460 165" stroke="#1a3cff" stroke-width="2" fill="none"/>
+
+        <!-- Lubricant molecules between surfaces -->
+        <g opacity="0.7">
+          <circle cx="60" cy="240" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <circle cx="60" cy="252" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <line x1="60" y1="243.5" x2="60" y2="248.5" stroke="#1a3cff" stroke-width="1" opacity="0.5"/>
+
+          <circle cx="120" cy="237" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <circle cx="120" cy="249" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <line x1="120" y1="240.5" x2="120" y2="245.5" stroke="#00c2a8" stroke-width="1" opacity="0.6"/>
+
+          <circle cx="180" cy="241" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <circle cx="180" cy="253" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <line x1="180" y1="244.5" x2="180" y2="249.5" stroke="#1a3cff" stroke-width="1" opacity="0.5"/>
+
+          <circle cx="240" cy="238" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <circle cx="240" cy="250" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <line x1="240" y1="241.5" x2="240" y2="246.5" stroke="#00c2a8" stroke-width="1" opacity="0.6"/>
+
+          <circle cx="300" cy="242" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <circle cx="300" cy="254" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <line x1="300" y1="245.5" x2="300" y2="250.5" stroke="#1a3cff" stroke-width="1" opacity="0.5"/>
+
+          <circle cx="360" cy="239" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <circle cx="360" cy="251" r="3.5" fill="#00c2a8" opacity="0.5"/>
+          <line x1="360" y1="242.5" x2="360" y2="247.5" stroke="#00c2a8" stroke-width="1" opacity="0.6"/>
+
+          <circle cx="420" cy="241" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <circle cx="420" cy="253" r="3.5" fill="#1a3cff" opacity="0.4"/>
+          <line x1="420" y1="244.5" x2="420" y2="249.5" stroke="#1a3cff" stroke-width="1" opacity="0.5"/>
+        </g>
+
+        <!-- Motion arrow -->
+        <g transform="translate(10, 135)">
+          <line x1="0" y1="8" x2="70" y2="8" stroke="#1a3cff" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <polygon points="70,4 82,8 70,12" fill="#1a3cff"/>
+          <text x="0" y="24" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#1a3cff" letter-spacing="0.05em">SLIDING DIRECTION</text>
+        </g>
+
+        <!-- Label: lubricant film -->
+        <text x="355" y="264" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#00c2a8" letter-spacing="0.05em" opacity="0.8">LUBRICANT FILM</text>
+        <line x1="395" y1="255" x2="395" y2="308" stroke="#00c2a8" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.5"/>
+
+        <!-- Dotted asperity contact -->
+        <circle cx="235" cy="240" r="5" fill="none" stroke="#ff4040" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+        <text x="200" y="232" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#ff4040" opacity="0.7" letter-spacing="0.03em">CONTACT</text>
+
+        <!-- Corner label -->
+        <text x="10" y="365" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#6b7185" opacity="0.6" letter-spacing="0.04em">SURFACE TOPOGRAPHY SCHEMATIC — TRIBOLOGICAL INTERFACE</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ─── Stats bar ──────────────────────────────────────────────── -->
+  <!--
+    HOW TO UPDATE STATS
+    ═══════════════════
+    Edit the numbers inside <span class="stat-num"> below.
+    Check your latest figures at: https://scholar.google.com/citations?user=PC8XMecAAAAJ
+  -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-num">23<span>+</span></span>
+        <span class="stat-label">Journal Articles</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">591<span>+</span></span>
+        <span class="stat-label">Citations</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">h<span>=</span>15</span>
+        <span class="stat-label">h-Index</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">15<span>+</span></span>
+        <span class="stat-label">Years Research</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Research Areas ─────────────────────────────────────────── -->
+  <section class="research-areas" id="research">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Research Areas</h2>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-icon">⚡</div>
+          <div class="area-title">EV Drivetrain Tribology</div>
+          <p class="area-desc">EPSRC-funded investigation of aqueous lubrication for electric vehicle motor bearings and gears, addressing electrical current passage through tribological contacts.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🔬</div>
+          <div class="area-title">Lubricant Additive Science</div>
+          <p class="area-desc">Molecular-level study of additive-additive interactions (MoDTC, ZDDP, Oleamide) using Sum Frequency Generation spectroscopy and Nano Infrared microscopy.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🧬</div>
+          <div class="area-title">Bio-Tribology & Food Science</div>
+          <p class="area-desc">Frictional behaviour of plant-based foods, oral lubrication by saliva, and protein interactions at PDMS surfaces — bridging engineering and life sciences.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🧲</div>
+          <div class="area-title">Polymer Composites & Surfaces</div>
+          <p class="area-desc">PEEK/PBI blends, carbon-fiber reinforced composites, and graphene-enhanced polyurethane bearings for high-performance, water-lubricated marine applications.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">⚛️</div>
+          <div class="area-title">Triboemission & Tribocharging</div>
+          <p class="area-desc">Novel methods to observe emission of ions, electrons, and photons from contact interfaces, and their role in lubricant boundary film formation.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🛢️</div>
+          <div class="area-title">Base Oil Chemistry</div>
+          <p class="area-desc">Quantifying molecular structural changes in lubricating base oils during production using GC, FTIR, NMR spectroscopy, and bench-top hydrocracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Experience ─────────────────────────────────────────────── -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Research Experience</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-meta current">
+            <span class="timeline-period">Aug 2025 – Present</span>
+            <span class="timeline-inst">University of Sheffield</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Research Associate</div>
+            Leading an EPSRC-funded programme on aqueous lubrication for EV drivetrain applications.
+            <ul>
+              <li>Investigating sustainable lubricants for electric vehicle motor bearings and gears</li>
+              <li>Guest lecturer and Module Instructor for Advanced Thermodynamic Cycles (MEC-311)</li>
+              <li>Technical consultancy for Italmatch Chemicals and Far-UK Consultants</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Sept 2024 – Mar 2025</span>
+            <span class="timeline-inst">Ingram Tribology</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Research & Development Engineer</div>
+            Expert consulting to global clients in the lubricant and automotive industries.
+            <ul>
+              <li>Electrified contact testing using MTM and MPR rolling contact fatigue rigs</li>
+              <li>Developed rapid chocolate screening methodology using biotribometer</li>
+              <li>Designed the 'Biotribology for Industry' training course</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Apr 2023 – Jun 2024</span>
+            <span class="timeline-inst">Imperial College London</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Research Associate</div>
+            Investigating lubricant additive competitive adsorption (MoDTC and ZDDP) and plant-based food tribology.
+            <ul>
+              <li>Collaboration with Motif FoodWorks on frictional behaviour of plant proteins</li>
+              <li>Graphene-reinforced TPU nanocomposites for water-lubricated marine stern tube bearings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Oct 2022 – Mar 2023</span>
+            <span class="timeline-inst">University of Cambridge</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Senior Research Associate</div>
+            BP Castrol-funded lubricating base oil project. Managed £242,000 budget over 3 years.
+            <ul>
+              <li>Designed and built a bench-top hydrocracker pressurised reactor</li>
+              <li>Developed Thermal Diffusion Column for molecular separation in mineral oil</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">May 2019 – Oct 2022</span>
+            <span class="timeline-inst">University of Cambridge</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Research Associate</div>
+            Industry collaboration with BP-Castrol on next-generation engine oil lubricants.
+            <ul>
+              <li>Molecular-level additive analysis using SFG spectroscopy and Nano-IR microscopy</li>
+              <li>Lubrication mechanism of soft PVA hydrogels; polymer blend nanoscale mixing</li>
+              <li>Co-managed two chemistry laboratories; served on departmental safety committee</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">May 2017 – Apr 2019</span>
+            <span class="timeline-inst">Imperial College London</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-role">Research Assistant / Associate</div>
+            High-performance composites for automotive and marine stern tube bearings.
+            <ul>
+              <li>Studied in-situ plasma effects on transfer film properties in PEEK/Steel contacts</li>
+              <li>Supervised multidisciplinary projects yielding four journal publications</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Publications ──────────────────────────────────────────── -->
+  <!--
+    HOW TO ADD A NEW PUBLICATION
+    ════════════════════════════
+    Copy the block below and paste it ABOVE the #23 block (newest first).
+    Change the number, title, authors, journal name, and year.
+
+    <div class="pub-item">
+      <span class="pub-num">#24</span>
+      <div>
+        <div class="pub-title">Your new paper title here</div>
+        <div class="pub-meta">Author A, Puhan D. et al. — <span class="pub-journal">Journal Name</span>, Year</div>
+      </div>
+    </div>
+
+    Also update the "View All N Publications" button text at the bottom of this section.
+  -->
+  <section style="background:var(--surface);" id="publications">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Selected Publications</h2>
+      </div>
+
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-num">#23</span>
+          <div>
+            <div class="pub-title">Tribological characteristics of phosphonium-based ionic liquids: the role of adsorption layer and tribofilms</div>
+            <div class="pub-meta">Jiang, S.; Puhan, D. et al. — <span class="pub-journal">Wear</span>, Vols 584–585, 2026</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">#21</span>
+          <div>
+            <div class="pub-title">Acoustic emission monitoring of lubricant additive behaviour in sliding contacts</div>
+            <div class="pub-meta">Geng Z., Puhan D. et al. — <span class="pub-journal">Friction</span>, 2025</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">#20</span>
+          <div>
+            <div class="pub-title">Tribological Properties of Graphene-Reinforced Polyurethane Bearing Material</div>
+            <div class="pub-meta">Jiang S., Puhan D. et al. — <span class="pub-journal">Tribology International</span>, Vol. 193, 2024</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">#18</span>
+          <div>
+            <div class="pub-title">Evaluation of Structural and Compositional Changes of a Model Monoaromatic Hydrocarbon in a Benchtop Hydrocracker Using GC, FTIR and NMR Spectroscopy</div>
+            <div class="pub-meta">Puhan, D.; Casford, M.; Davies, P. — <span class="pub-journal">ACS Omega</span>, 8(39), 2023</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">#15</span>
+          <div>
+            <div class="pub-title">Liquid repellency enhancement through flexible microstructures</div>
+            <div class="pub-meta">Hu S., Cao X., Reddyhoff T., Puhan, D. et al. — <span class="pub-journal">Science Advances</span>, 6(32), 2020</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">#9</span>
+          <div>
+            <div class="pub-title">Transient aspects of plasma luminescence induced by triboelectrification of polymers</div>
+            <div class="pub-meta">Puhan, D.; Nevshupa R.; Wong J.; Reddyhoff, T. — <span class="pub-journal">Tribology International</span>, 130, 2019</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:2rem; text-align:center;">
+        <a href="https://scholar.google.com/citations?user=PC8XMecAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-ghost">
+          View All 23 Publications on Google Scholar ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Awards & Funding ──────────────────────────────────────── -->
+  <section class="awards-bg" id="awards">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Funding & Awards</h2>
+      </div>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-title">BP-Castrol Research Programme</div>
+          <div class="award-detail">Co-Investigator · November 2021</div>
+          <span class="award-amount">£256,740</span>
+        </div>
+        <div class="award-card">
+          <div class="award-title">Dame Julia Higgins Engineering Postdoc Fund</div>
+          <div class="award-detail">Co-Investigator · July 2018</div>
+          <span class="award-amount">£3,000</span>
+        </div>
+        <div class="award-card">
+          <div class="award-title">Peter Jost Travel Fund</div>
+          <div class="award-detail">March 2026 & March 2022</div>
+          <span class="award-amount">£1,500 × 2</span>
+        </div>
+        <div class="award-card">
+          <div class="award-title">STLE Tribology Frontiers — 2nd Best Poster</div>
+          <div class="award-detail">Chicago, USA · October 2018</div>
+          <span class="award-amount">$200</span>
+        </div>
+        <div class="award-card">
+          <div class="award-title">Peter J. Blau Best Poster Award</div>
+          <div class="award-detail">21st Wear of Materials, California · March 2017</div>
+          <span class="award-amount">$250</span>
+        </div>
+        <div class="award-card">
+          <div class="award-title">EPSRC Research Bursary (PhD)</div>
+          <div class="award-detail">Imperial College London · Nov 2013 – Nov 2017</div>
+          <span class="award-amount">Full PhD Funding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Education ─────────────────────────────────────────────── -->
+  <section id="education">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Education</h2>
+      </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <span class="edu-year">2014 – 2018</span>
+          <div>
+            <div class="edu-degree">PhD in Mechanical Engineering (Tribology)</div>
+            <div class="edu-school">Imperial College London, United Kingdom</div>
+            <div class="edu-gpa">Thesis: "Triboemission-Lubricant Interactions" · Supervisor: Dr. Tom Reddyhoff</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2011 – 2013</span>
+          <div>
+            <div class="edu-degree">M.Tech in Tribology & Maintenance Engineering</div>
+            <div class="edu-school">Indian Institute of Technology Delhi</div>
+            <div class="edu-gpa">GPA: 9.27 / 10 · MHRD Scholarship recipient</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2007 – 2011</span>
+          <div>
+            <div class="edu-degree">B.Tech in Mechanical Engineering</div>
+            <div class="edu-school">Biju Patnaik University of Technology (BPUT), Odisha</div>
+            <div class="edu-gpa">GPA: 8.87 / 10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ───────────────────────────────────────────────── -->
+  <section class="contact-bg" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-blurb">
+          <p>I welcome collaborations in tribology, lubrication science, surface engineering, and bio-tribology. Whether you are in academia or industry, feel free to get in touch.</p>
+          <p>I also supervise and mentor postgraduate students, and offer consultancy through Leonardo Testing Services.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="mailto:d.puhan@sheffield.ac.uk" class="btn btn-primary">Send an Email</a>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              <a href="mailto:d.puhan@sheffield.ac.uk">d.puhan@sheffield.ac.uk</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <strong>Phone</strong>
+              +44 07925 600 973
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <div class="contact-text">
+              <strong>ORCID</strong>
+              <a href="https://orcid.org/0000-0002-7353-8528" target="_blank" rel="noopener">0000-0002-7353-8528</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📖</div>
+            <div class="contact-text">
+              <strong>Google Scholar</strong>
+              <a href="https://scholar.google.com/citations?user=PC8XMecAAAAJ&hl=en" target="_blank" rel="noopener">View profile</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div class="contact-text">
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/debashis-puhan-2588264b/" target="_blank" rel="noopener">debashis-puhan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Debashis Puhan · Ph.D, AFHEA, MInstP</span>
+      <span>University of Sheffield · Department of Mechanical Engineering</span>
+    </div>
+  </footer>
+
+</body>
+</html>
